@@ -14,7 +14,6 @@
             font-family: "Poppins", sans-serif;
             text-align: center;
             overflow-x: hidden;
-            margin-top: 100px;
         }
 
         /* Menu */
@@ -64,6 +63,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-top:100px;
         }
 
 
@@ -71,6 +71,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 100px auto;
+            scroll-margin-top:90px;
         }
 
         .about-text {
@@ -88,7 +89,6 @@
 
         .overlay {
 
-            width: 850px;
             max-width: 90%;
 
             background: rgba(20, 20, 20, .85);
@@ -101,6 +101,39 @@
 
             box-shadow:
                 0 0 25px rgba(255, 0, 0, .2);
+        }
+            @media (max-width:768px){
+
+.overlay{
+    padding:25px;
+}
+
+.overlay h1{
+    font-size:34px;
+}
+
+.title{
+    font-size:30px;
+}
+
+.about-text{
+    width:95%;
+    padding:20px;
+}
+
+.about-text img{
+    width:220px;
+    height:300px;
+}
+
+.gallery img{
+    width:100%;
+}
+
+nav{
+    gap:18px;
+    font-size:14px;
+}
 
         }
 
@@ -160,21 +193,15 @@
 
         }
 
-        .gallery img {
-
-            width: 900px;
-
-            max-width: 100%;
-
-            border-radius: 15px;
-
-            border: 2px solid #550000;
-
-            object-fit: cover;
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, .2);
-
-        }
+       .gallery img{
+    width:900px;
+    max-width:100%;
+    border-radius:15px;
+    border:2px solid #550000;
+    object-fit:cover;
+    box-shadow:0 0 25px rgba(255,0,0,.2);
+    transition:.3s;
+}
 
         .gallery img:hover {
             transform: scale(1.03);
@@ -276,9 +303,10 @@
                     rgba(0, 0, 0, .35) 70%,
                     rgba(0, 0, 0, .9) 100%);
 
-            z-index: 9999;
-
         }
+        html{
+    scroll-behavior:smooth;
+}
     </style>
 
 </head>
@@ -323,7 +351,7 @@
             <h3>ARSENIC</h3>
 
             <img
-                src=https://lh3.google.com/u/0/d/1ZfKJH_sLuf8uug5U1kGMaFu-9eCmoOkg=w1520-h1301-iv1?auditContext=forDisplay>
+                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/734435296_1608898574248398_1664793092721438922_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=etDtP06mJi8Q7kNvwGJQqRv&_nc_oc=AdqMQhugsXYd0-wykxY32YCs3RgdzW8Wbg-EJ-uZX2Z-T21zgH5E1QtksR6NsjaagCQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_ss=7a22e&oh=03_Q7cD5wEkhah_uSV7epLaMVfoZD1ZE1FAnkiloQvYp9_Nqq9Snw&oe=6A6DAFAF">
 
             <ul>
                 <li>Tên : Arsenic</li>
@@ -338,7 +366,7 @@
             <h3>RURU</h3>
 
             <img
-                src="https://lh3.google.com/u/0/d/1VNXTOAjWMzIWlUHBHbk7GEAkzv7WEZnY=w2561-h1301-iv1?auditContext=prefetch">
+                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/731461695_4023936611245236_8151763230960504691_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=71SN-5qlbt4Q7kNvwFOnivh&_nc_oc=AdrN3-uu7vb_aqcOnSatvW7CPi51r55Ob13TBcTZRS0WtFDVZKqeY-Gt4H1_T42fDk0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_ss=7a22e&oh=03_Q7cD5wE69bqAxbFulAqGkwjvHaVle-hNl3F-oVGpRtW8YlnRpA&oe=6A6DAAAF">
 
             <ul>
                 <li>Tên : Ruru de Vivian</li>
@@ -362,20 +390,20 @@
         <div class="gallery">
 
             <img
-                src="https://lh3.google.com/u/0/d/1LgpDI3edKlxaxda-TehfgI5nYnacJ7CP=w2561-h1301-iv1?auditContext=prefetch">
+                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/734663941_1672638133793190_29184823611115692_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_ohc=YZCVruX43kQQ7kNvwGac6zI&_nc_oc=Adq5icYEAYTkDIC5hM_z8ndsl60_5SkeTvY2oMxNTsg3S6U7Mmr35vHf4oQQxiAPfJg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_ss=7a22e&oh=03_Q7cD5wFiAGSHvlNBWnYRqboNhrFTcE3MUx2YED7ez9JzF4g7PA&oe=6A6DA616">
             <ul>
                 <li>Các sinh vật ngoài hành tinh đã xâm chiếm Trái Đất nơi mà con người sinh sống và biến nơi này thành
                     "nhà" của chúng. Chúng luôn có vị thế cao hơn con người. </li>
             </ul>
             <img
-                src="https://lh3.google.com/u/0/d/1AekmywqRV2OjRPoE87UEsg8IARrSjWph=w1520-h1301-iv1?auditContext=prefetch">
+                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/734101054_1636508221812003_846777981151177275_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_ohc=dl60Ey4P9isQ7kNvwFjpanz&_nc_oc=Adob2W8ez3tOY5BqnOqiirzm_41qJddQGsxjHHJ84UzesUZgzbouy6r8tIcK-k3Tvno&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_ss=7a22e&oh=03_Q7cD5wGnSxgBRMdSJJSo0yXw-2mFIlF4Oo4Wt8yP9K_x8P0Rqg&oe=6A6DC926">
             <ul>
                 <li>Kể từ khi bị Aliens chiếm đóng, dường như con người đã mất phương hướng. Con người đã quên mất thần
                     linh hoặc thần linh đã bỏ rơi họ. Aliens đối xử với con người như thể họ là đồ chơi, thú cưng và
                     công cụ giải trí cho chúng.</li>
             </ul>
             <img
-                src="https://lh3.google.com/u/0/d/1z43GnwRkNllxE0yUTOxd70BY1VhT5yeA=w2561-h1301-iv1?auditContext=prefetch">
+                src="https://scontent.fhan18-1.fna.fbcdn.net/v/t1.15752-9/731916537_4318860611699765_829679963310725882_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=9f807c&_nc_ohc=2VzQ__JOVqAQ7kNvwEvaGwz&_nc_oc=AdpY7FMvAu9WUch6EFVe8HexUPCX993a-CyB-Ase5KAxUx4zzpNtylWGQA-GYSGqCPE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fhan18-1.fna&_nc_ss=7a22e&oh=03_Q7cD5wFDoQ_yqbIWxaqss2M24Srzhs--LuIWIgNc0qB2rDSi_g&oe=6A6DD50C">
             <ul>
                 <li>Đáng chú ý, có một số trẻ em bị đưa đến nơi gọi là Anakt Garden, một trường mầm non chuyên dạy về âm
                     nhạc giúp các thí sinh nâng cao kiến thức về âm nhạc và luyện tập để tham gia thi đấu tại Alien
