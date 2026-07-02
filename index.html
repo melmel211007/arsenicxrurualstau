@@ -6,110 +6,281 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silent Auditorium</title>
 
-    <style>
-        body {
-            margin: 0;
-            background: #090909;
-            color: #d8d8d8;
-            font-family: "Poppins", sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-            box-sizing:border-box;
-        }
+<style>
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Menu */
+html{
+    scroll-behavior:smooth;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 45px;
+body{
+    background:#090909;
+    color:#d8d8d8;
+    font-family:"Poppins",sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
 
-            background: rgba(5, 5, 5, .92);
-            backdrop-filter: blur(10px);
+/* Hiệu ứng tối viền */
 
-            border-bottom: 1px solid #5b0000;
-            padding: 18px;
-            z-index: 1000;
-        }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+    radial-gradient(circle,
+    transparent 0%,
+    rgba(0,0,0,.35) 70%,
+    rgba(0,0,0,.9) 100%);
+}
 
-        nav a {
-            color: #c70039;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            transition: .35s;
-        }
+/* ================= MENU ================= */
 
-        nav a:hover {
-            color: white;
-            text-shadow: 0 0 15px red;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:45px;
+    padding:18px;
+    background:rgba(5,5,5,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #5b0000;
+    z-index:1000;
+}
 
-        /* Banner */
+nav a{
+    position:relative;
+    color:#c70039;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:2px;
+    transition:.3s;
+}
 
-        header {
-         
+nav a:hover{
+    color:white;
+    text-shadow:0 0 15px red;
+}
 
-            background:
-                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .95)),
-                url("https://img.magnific.com/free-photo/interior-old-room-with-spotlight_1048-13648.jpg?semt=ais_hybrid&w=740&q=80");
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#d10000;
+    transition:.3s;
+}
 
-            background-size: cover;
-            background-position: center;
+nav a:hover::after{
+    width:100%;
+}
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+/* ================= HEADER ================= */
+
+header{
     min-height:100vh;
+    padding:80px 20px;
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:80px 20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95)),
+    url("https://img.magnific.com/free-photo/interior-old-room-with-spotlight_1048-13648.jpg?semt=ais_hybrid&w=740&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    width:850px;
+    max-width:90%;
+    padding:45px;
+
+    background:rgba(20,20,20,.88);
+
+    border:1px solid #5f0000;
+    border-radius:18px;
+
+    box-shadow:0 0 25px rgba(255,0,0,.25);
+
+    animation:fadeUp 1s ease;
+}
+
+.overlay img{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #7b0000;
+    box-shadow:0 0 30px rgba(255,0,0,.5);
+}
+
+.overlay h1{
+    margin-top:20px;
+    color:#d10000;
+    font-size:55px;
+    letter-spacing:4px;
+    text-shadow:0 0 20px red;
+}
+
+.overlay p{
+    color:#888;
+    font-size:22px;
+}
+
+/* ================= SECTION ================= */
+
+section{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto;
+    scroll-margin-top:90px;
+}
+
+.title{
+    color:#b30000;
+    font-size:48px;
+    letter-spacing:8px;
+    text-shadow:0 0 18px red;
+    margin-bottom:35px;
+}
+
+/* ================= CHARACTER ================= */
+
+.about-text{
+    width:80%;
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+
+    background:#141414;
+
+    border:1px solid #520000;
+    border-radius:18px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+    font-size:20px;
+
+    box-shadow:0 0 30px rgba(255,0,0,.15);
+}
+
+.about-text h3{
+    color:#ff5b94;
+    margin:20px 0;
+}
+
+.about-text img{
+    width:300px;
+    height:420px;
+    object-fit:cover;
+    display:block;
+    margin:20px auto;
+
+    border-radius:12px;
+    border:3px solid #5b0000;
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(255,0,0,.25);
+}
+
+.about-text img:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 35px rgba(255,0,0,.5);
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:35px;
+}
+
+.gallery img{
+    width:900px;
+    max-width:100%;
+    border-radius:15px;
+    border:2px solid #550000;
+
+    object-fit:cover;
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(255,0,0,.2);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 35px rgba(255,0,0,.4);
+}
+
+/* ================= GAME ================= */
+
+.skill{
+    background:#151515;
+    border:1px solid #650000;
+    box-shadow:0 0 20px rgba(255,0,0,.15);
+}
+
+.skill img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+/* ================= TEXT ================= */
+
+ul{
+    list-style:none;
+    padding:0;
+    margin:20px auto;
+    line-height:2;
+    font-size:18px;
+}
+
+p,
+li{
+    color:#cfcfcf;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 
 }
 
+/* ================= RESPONSIVE ================= */
 
-        section {
-            width: 90%;
-            max-width: 1200px;
-            margin: 100px auto;
-            scroll-margin-top:90px;
-        }
+@media (max-width:768px){
 
-        .about-text {
-            width: 80%;
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            text-align: center;
-            background: #fff;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(255, 180, 210, .25);
-            line-height: 1.8;
-            font-size: 20px;
-        }
-
-        .overlay {
-            width:850px;
-
-            max-width: 90%;
-
-            background: rgba(20, 20, 20, .85);
-
-            border: 1px solid #5f0000;
-
-            border-radius: 15px;
-
-            padding: 45px;
-
-            box-shadow:
-                0 0 25px rgba(255, 0, 0, .2);
-        }
-            @media (max-width:768px){
+nav{
+    gap:18px;
+    font-size:14px;
+}
 
 .overlay{
     padding:25px;
@@ -117,6 +288,11 @@
 
 .overlay h1{
     font-size:34px;
+}
+
+.overlay img{
+    width:180px;
+    height:180px;
 }
 
 .title{
@@ -130,191 +306,14 @@
 
 .about-text img{
     width:220px;
-    height:300px;
+    height:auto;
 }
 
 .gallery img{
     width:100%;
 }
 
-nav{
-    gap:18px;
-    font-size:14px;
-}
-
-        }
-
-        .overlay img {
-
-            width: 220px;
-            height: 220px;
-
-            object-fit: cover;
-
-            border-radius: 50%;
-
-            border: 4px solid #7b0000;
-
-            box-shadow:
-                0 0 30px rgba(255, 0, 0, .5);
-
-        }
-
-        .title {
-            color: #b30000;
-            font-size: 48px;
-            letter-spacing: 8px;
-            text-shadow: 0 0 18px red;
-        }
-
-        .overlay h1 {
-
-            color: #d10000;
-
-            font-size: 55px;
-
-            letter-spacing: 4px;
-
-            text-shadow: 0 0 20px red;
-
-        }
-
-        .overlay p {
-
-            color: #777;
-            font-size: 22px;
-
-        }
-
-        /* Gallery */
-
-        .gallery {
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            gap: 35px;
-
-        }
-
-       .gallery img{
-    width:900px;
-    max-width:100%;
-    border-radius:15px;
-    border:2px solid #550000;
-    object-fit:cover;
-    box-shadow:0 0 25px rgba(255,0,0,.2);
-    transition:.3s;
-}
-
-        .gallery img:hover {
-            transform: scale(1.03);
-        }
-
-        .about-text img {
-
-            width: 300px;
-            height: 420px;
-
-            object-fit: cover;
-
-            border-radius: 12px;
-
-            border: 3px solid #5b0000;
-
-            margin: 20px auto;
-
-            display: block;
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, .25);
-
-        }
-
-        .about-text {
-
-            background: #141414;
-
-            border: 1px solid #520000;
-
-            color: #d8d8d8;
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 0 30px rgba(255, 0, 0, .15);
-
-        }
-
-        /* Skills */
-
-        .skill {
-
-            background: #151515;
-
-            border: 1px solid #650000;
-
-            box-shadow: 0 0 20px rgba(255, 0, 0, .15);
-
-        }
-
-        .skill img {
-
-            width: 100%;
-
-            height: 450px;
-
-            object-fit: cover;
-
-        }
-
-
-        .about-text h3 {
-            color: #ff5b94;
-            margin: 20px 0 10px;
-        }
-
-        ul {
-            text-align: center;
-            display: inline-block;
-            line-height: 2;
-            font-size: 18px;
-            padding-left: 20px;
-            list-style-type: none;
-        }
-
-        p,
-        li {
-
-            color: #cfcfcf;
-
-            line-height: 2;
-
-        }
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            background:
-                radial-gradient(circle at center,
-                    transparent 0%,
-                    rgba(0, 0, 0, .35) 70%,
-                    rgba(0, 0, 0, .9) 100%);
-
-        }
-        html{
-    scroll-behavior:smooth;
-}
-    </style>
+</style>
 
 </head>
 
