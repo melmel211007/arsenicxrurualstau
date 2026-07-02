@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien Stage AU Arsenic x Ruru</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #090909;
+            color: #d8d8d8;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            margin-top: 100px;
+        }
+
+        /* Menu */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+
+            background: rgba(5, 5, 5, .92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #5b0000;
+            padding: 18px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #c70039;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: .35s;
+        }
+
+        nav a:hover {
+            color: white;
+            text-shadow: 0 0 15px red;
+        }
+
+        /* Banner */
+
+        header {
+            height: 100vh;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .95)),
+                url("https://img.magnific.com/free-photo/interior-old-room-with-spotlight_1048-13648.jpg?semt=ais_hybrid&w=740&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+
+        .about-text {
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            text-align: center;
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 180, 210, .25);
+            line-height: 1.8;
+            font-size: 20px;
+        }
+
+        .overlay {
+
+            width: 850px;
+            max-width: 90%;
+
+            background: rgba(20, 20, 20, .85);
+
+            border: 1px solid #5f0000;
+
+            border-radius: 15px;
+
+            padding: 45px;
+
+            box-shadow:
+                0 0 25px rgba(255, 0, 0, .2);
+
+        }
+
+        .overlay img {
+
+            width: 220px;
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid #7b0000;
+
+            box-shadow:
+                0 0 30px rgba(255, 0, 0, .5);
+
+        }
+
+        .title {
+            color: #b30000;
+            font-size: 48px;
+            letter-spacing: 8px;
+            text-shadow: 0 0 18px red;
+        }
+
+        .overlay h1 {
+
+            color: #d10000;
+
+            font-size: 55px;
+
+            letter-spacing: 4px;
+
+            text-shadow: 0 0 20px red;
+
+        }
+
+        .overlay p {
+
+            color: #777;
+            font-size: 22px;
+
+        }
+
+        /* Gallery */
+
+        .gallery {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+        .gallery img {
+
+            width: 900px;
+
+            max-width: 100%;
+
+            border-radius: 15px;
+
+            border: 2px solid #550000;
+
+            object-fit: cover;
+
+            box-shadow: 0 0 25px rgba(255, 0, 0, .2);
+
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        .about-text img {
+
+            width: 300px;
+            height: 420px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            border: 3px solid #5b0000;
+
+            margin: 20px auto;
+
+            display: block;
+
+            box-shadow: 0 0 25px rgba(255, 0, 0, .25);
+
+        }
+
+        .about-text {
+
+            background: #141414;
+
+            border: 1px solid #520000;
+
+            color: #d8d8d8;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 30px rgba(255, 0, 0, .15);
+
+        }
+
+        /* Skills */
+
+        .skill {
+
+            background: #151515;
+
+            border: 1px solid #650000;
+
+            box-shadow: 0 0 20px rgba(255, 0, 0, .15);
+
+        }
+
+        .skill img {
+
+            width: 100%;
+
+            height: 450px;
+
+            object-fit: cover;
+
+        }
+
+
+        .about-text h3 {
+            color: #ff5b94;
+            margin: 20px 0 10px;
+        }
+
+        ul {
+            text-align: center;
+            display: inline-block;
+            line-height: 2;
+            font-size: 18px;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        p,
+        li {
+
+            color: #cfcfcf;
+
+            line-height: 2;
+
+        }
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(circle at center,
+                    transparent 0%,
+                    rgba(0, 0, 0, .35) 70%,
+                    rgba(0, 0, 0, .9) 100%);
+
+            z-index: 9999;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <a href="#about">CHARACTER</a>
+        <a href="#gallery">CONTEXT</a>
+        <a href="#skills">GAME</a>
+    </nav>
+
+    <header>
+
+        <div class="overlay">
+
+            <img
+                src="https://lh3.google.com/u/0/d/1cgDoyDRqK0ZFJ_ywYD7BvilRSJNQjhVf=w2561-h1301-iv1?auditContext=prefetch">
+
+            <h1>Alien Stage AU Arsenic x Ruru</h1>
+
+            <p> INFORMATION </p>
+            <ul>
+                <li>!!!LƯU Ý!!!</li>
+                <li>Những nội dung sau đây hoàn toàn do bọn mình tự tạo dựa trên ý tưởng từ dự án Alien Stage của
+                    VIVINOS, QMENG, STUDIO LICO và các nghệ sĩ tham gia. Những nhân vật và nội dung trong game sẽ không
+                    ảnh hưởng đến cốt truyện gốc của dự án.
+                </li>
+            </ul>
+
+        </div>
+
+    </header>
+
+    <section id="about">
+
+        <h2 class="title">CHARACTER</h2>
+
+
+        <div class="about-text">
+
+            <h3>ARSENIC</h3>
+
+            <img
+                src=https://lh3.google.com/u/0/d/1ZfKJH_sLuf8uug5U1kGMaFu-9eCmoOkg=w1520-h1301-iv1?auditContext=forDisplay>
+
+            <ul>
+                <li>Tên : Arsenic</li>
+                <li>Chiều cao : 1m85</li>
+                <li>Cân nặng : ???</li>
+                <li>Tuổi : 23</li>
+                <li>Là một trong những đứa trẻ được đào tạo ở Anakt Garden</li>
+                <li>Thích : -.. .- -. .... -. --. ..- --- .. - .-. ..- .--. .... ..- -. ..-</li>
+                <li>Ghét : -- .- -.-- - .... .- -. --. .-.. .- -- -- --- -- ...- --- -.. ..- -.-- . -.</li>
+            </ul>
+
+            <h3>RURU</h3>
+
+            <img
+                src="https://lh3.google.com/u/0/d/1VNXTOAjWMzIWlUHBHbk7GEAkzv7WEZnY=w2561-h1301-iv1?auditContext=prefetch">
+
+            <ul>
+                <li>Tên : Ruru de Vivian</li>
+                <li>Chiều cao : 1m56</li>
+                <li>Cân nặng : 43kg</li>
+                <li>Tuổi : 21</li>
+                <li>Là một trong những đứa trẻ được đào tạo tại Anakt Garden</li>
+                <li>Thích : ¡¹Ö ¾ð¾î ÀÔ´Ï´Ùî¶ó´Â°</li>
+                <li>Ghét : ¡Áø ÇÁ·Î±×·¡¹Ö</li>
+            </ul>
+
+        </div>
+
+
+    </section>
+
+    <section id="gallery">
+
+        <h2 class="title">CONTEXT</h2>
+
+        <div class="gallery">
+
+            <img
+                src="https://lh3.google.com/u/0/d/1LgpDI3edKlxaxda-TehfgI5nYnacJ7CP=w2561-h1301-iv1?auditContext=prefetch">
+            <ul>
+                <li>Các sinh vật ngoài hành tinh đã xâm chiếm Trái Đất nơi mà con người sinh sống và biến nơi này thành
+                    "nhà" của chúng. Chúng luôn có vị thế cao hơn con người. </li>
+            </ul>
+            <img
+                src="https://lh3.google.com/u/0/d/1AekmywqRV2OjRPoE87UEsg8IARrSjWph=w1520-h1301-iv1?auditContext=prefetch">
+            <ul>
+                <li>Kể từ khi bị Aliens chiếm đóng, dường như con người đã mất phương hướng. Con người đã quên mất thần
+                    linh hoặc thần linh đã bỏ rơi họ. Aliens đối xử với con người như thể họ là đồ chơi, thú cưng và
+                    công cụ giải trí cho chúng.</li>
+            </ul>
+            <img
+                src="https://lh3.google.com/u/0/d/1z43GnwRkNllxE0yUTOxd70BY1VhT5yeA=w2561-h1301-iv1?auditContext=prefetch">
+            <ul>
+                <li>Đáng chú ý, có một số trẻ em bị đưa đến nơi gọi là Anakt Garden, một trường mầm non chuyên dạy về âm
+                    nhạc giúp các thí sinh nâng cao kiến thức về âm nhạc và luyện tập để tham gia thi đấu tại Alien
+                    Stage.</li>
+                <li>Và quan trọng nhất, về cuộc thi âm nhạc này, mỗi vòng sẽ có 2 thí sinh. Tổng cộng có 7 vòng, đã có
+                    49 mùa giải diễn ra, vì vậy cuộc thi này đã diễn ra từ nhiều năm trước. </li>
+                <li>Là một trong những đứa trẻ được đào tạo tại Anakt Garden</li>
+                <li>Người thua sẽ bị b.ắn ch.ết tại chỗ, còn người thắng sẽ tiến vào vòng tiếp theo. Đây là hoạt động
+                    giải trí của Alien. </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <h2 class="title">GAME</h2>
+        <h3> COMING SOON </h3>
+
+
+    </section>
+
+
+</body>
+
+</html>
